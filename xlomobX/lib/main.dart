@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         scaffoldBackgroundColor: Colors.purple,
         appBarTheme: AppBarTheme(elevation: 0),
+        cursorColor: Colors.orange,
       ),
       home: BaseScreen(),
     );
