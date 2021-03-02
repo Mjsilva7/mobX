@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xlomobX/screens/signup/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -108,9 +109,9 @@ class LoginScreen extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            // Navigator.of(context).push(
-                            //   MaterialPageRoute(builder: (_) => SignUpScreen()),
-                            // );
+                            Navigator.of(context).push(
+                              MaterialPageRoute(builder: (_) => SignUpScreen()),
+                            );
                           },
                           child: Text(
                             'Cadastre-se',
