@@ -1,0 +1,11 @@
+{
+    "search.exclude": {
+        "**/.g.dart": true
+    },
+    "files.watcherExclude": {
+        "**/.g.dart": true
+    },
+    "files.exclude": {
+        "**/.g.dart": true
+    }
+}
