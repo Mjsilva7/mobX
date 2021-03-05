@@ -8,7 +8,7 @@ class CustomDrawer extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.horizontal(right: Radius.circular(50)),
       child: SizedBox(
-        width: MediaQuery.of(context).size.width * 0.6,
+        width: MediaQuery.of(context).size.width * 0.65,
         child: Drawer(
           child: ListView(
             children: [
