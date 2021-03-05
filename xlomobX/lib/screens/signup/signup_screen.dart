@@ -54,70 +54,90 @@ class SignUpScreen extends StatelessWidget {
                         title: 'E-mail',
                         subtitle: 'Enviaremos um e-mail de confirmação.',
                       ),
-                      TextField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: 'email@email.com',
-                          isDense: true,
-                        ),
-                        keyboardType: TextInputType.emailAddress,
-                        autocorrect: false,
-                      ),
+                      Observer(builder: (_) {
+                        return TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: 'email@email.com',
+                            isDense: true,
+                            errorText: signupStore.emailError,
+                          ),
+                          keyboardType: TextInputType.emailAddress,
+                          autocorrect: false,
+                          onChanged: signupStore.setEmail,
+                        );
+                      }),
                       const SizedBox(height: 16),
                       FieldTitle(
                         title: 'Celular',
                         subtitle: 'Proteja sua conta.',
                       ),
-                      TextField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: '(00) 9 0000-0000',
-                          isDense: true,
-                        ),
-                        keyboardType: TextInputType.phone,
-                        inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly,
-                          TelefoneInputFormatter(),
-                        ],
-                      ),
+                      Observer(builder: (_) {
+                        return TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: '(00) 9 0000-0000',
+                            isDense: true,
+                            errorText: signupStore.phoneError,
+                          ),
+                          keyboardType: TextInputType.phone,
+                          inputFormatters: [
+                            FilteringTextInputFormatter.digitsOnly,
+                            TelefoneInputFormatter(),
+                          ],
+                          onChanged: signupStore.setPhone,
+                        );
+                      }),
                       const SizedBox(height: 16),
                       FieldTitle(
                         title: 'Senha',
                         subtitle: 'Use letras, números e caracteres especiais.',
                       ),
-                      TextField(
-                        decoration: InputDecoration(
-                          border: const OutlineInputBorder(),
-                          isDense: true,
-                        ),
-                        obscureText: true,
-                      ),
+                      Observer(builder: (_) {
+                        return TextField(
+                          decoration: InputDecoration(
+                            border: const OutlineInputBorder(),
+                            isDense: true,
+                            errorText: signupStore.pass1Error,
+                          ),
+                          obscureText: true,
+                          onChanged: signupStore.setPass1,
+                        );
+                      }),
                       const SizedBox(height: 16),
                       FieldTitle(
                         title: 'Confirmar senha',
                         subtitle: 'Repita a senha.',
                       ),
-                      TextField(
-                        decoration: InputDecoration(
-                          border: const OutlineInputBorder(),
-                          isDense: true,
-                        ),
-                        obscureText: true,
+                      Observer(
+                        builder: (_) {
+                          return TextField(
+                            decoration: InputDecoration(
+                              border: const OutlineInputBorder(),
+                              isDense: true,
+                              errorText: signupStore.pass2Error,
+                            ),
+                            obscureText: true,
+                            onChanged: signupStore.setPass2,
+                          );
+                        },
                       ),
-                      Container(
-                        height: 40,
-                        margin: const EdgeInsets.only(top: 20, bottom: 12),
-                        child: RaisedButton(
-                          color: Colors.orange,
-                          child: Text('Cadastrar'),
-                          textColor: Colors.white,
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                      Observer(builder: (_) {
+                        return Container(
+                          height: 40,
+                          margin: const EdgeInsets.only(top: 20, bottom: 12),
+                          child: RaisedButton(
+                            color: Colors.orange,
+                            child: Text('Cadastrar'),
+                            textColor: Colors.white,
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            onPressed: signupStore.isFormValid ? () {} : null,
                           ),
-                          onPressed: () {},
-                        ),
-                      ),
+                        );
+                      }),
                       Divider(color: Colors.black),
                       Padding(
                           padding: const EdgeInsets.symmetric(vertical: 8),
