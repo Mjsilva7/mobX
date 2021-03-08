@@ -10,6 +10,7 @@ class ErrorBox extends StatelessWidget {
     if (message == null) return Container();
     return Container(
       color: Colors.red,
+      padding: const EdgeInsets.all(8),
       child: Row(
         children: [
           Icon(

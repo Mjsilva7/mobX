@@ -116,7 +116,7 @@ abstract class _SignupStore with Store {
     );
 
     try {
-      await UserRepository().signUp(user);
+      final resultUser = await UserRepository().signUp(user);
     } catch (e) {
       error = e;
     }

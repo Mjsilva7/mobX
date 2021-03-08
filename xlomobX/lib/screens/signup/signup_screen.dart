@@ -34,8 +34,11 @@ class SignUpScreen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Observer(builder: (_) {
-                      return ErrorBox(
-                        message: signupStore.error,
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: ErrorBox(
+                          message: signupStore.error,
+                        ),
                       );
                     }),
                     FieldTitle(
