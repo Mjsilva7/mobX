@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mobx/mobx.dart';
+import 'package:xlomobX/screens/create/create_screen.dart';
 import 'package:xlomobX/screens/home/home_screen.dart';
 import 'package:xlomobX/store/page_store.dart';
 
@@ -29,7 +30,7 @@ class _BaseScreenState extends State<BaseScreen> {
         physics: NeverScrollableScrollPhysics(),
         children: [
           HomeScreen(),
-          Container(),
+          CreateScreen(),
           Container(),
           Container(),
           Container(),

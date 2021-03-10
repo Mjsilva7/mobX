@@ -11,6 +11,185 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // return Scaffold(
+    //   appBar: AppBar(
+    //     title: const Text('Cadastro'),
+    //     centerTitle: true,
+    //   ),
+    //   body: Container(
+    //     alignment: Alignment.center,
+    //     child: SingleChildScrollView(
+    //       child: Padding(
+    //         padding: const EdgeInsets.only(bottom: 16),
+    //         child: Card(
+    //           margin: const EdgeInsets.symmetric(horizontal: 32),
+    //           shape: RoundedRectangleBorder(
+    //             borderRadius: BorderRadius.circular(16),
+    //           ),
+    //           elevation: 8,
+    //           child: Padding(
+    //             padding: const EdgeInsets.all(16),
+    //             child: Column(
+    //               crossAxisAlignment: CrossAxisAlignment.stretch,
+    //               mainAxisSize: MainAxisSize.min,
+    //               children: [
+    //                 Observer(builder: (_) {
+    //                   return Padding(
+    //                     padding: const EdgeInsets.symmetric(vertical: 8.0),
+    //                     child: ErrorBox(
+    //                       message: signupStore.error,
+    //                     ),
+    //                   );
+    //                 }),
+    //                 FieldTitle(
+    //                   title: 'Apelido',
+    //                   subtitle: 'Como aparecer em seus anúncios.',
+    //                 ),
+    //                 Observer(builder: (_) {
+    //                   return TextField(
+    //                     enabled: !signupStore.loading,
+    //                     decoration: InputDecoration(
+    //                       border: OutlineInputBorder(),
+    //                       hintText: 'Nome',
+    //                       isDense: true,
+    //                       errorText: signupStore.nameError,
+    //                     ),
+    //                     onChanged: signupStore.setName,
+    //                   );
+    //                 }),
+    //                 const SizedBox(height: 16),
+    //                 FieldTitle(
+    //                   title: 'E-mail',
+    //                   subtitle: 'Enviaremos um e-mail de confirmação.',
+    //                 ),
+    //                 Observer(builder: (_) {
+    //                   return TextField(
+    //                     enabled: !signupStore.loading,
+    //                     decoration: InputDecoration(
+    //                       border: OutlineInputBorder(),
+    //                       hintText: 'email@email.com',
+    //                       isDense: true,
+    //                       errorText: signupStore.emailError,
+    //                     ),
+    //                     keyboardType: TextInputType.emailAddress,
+    //                     autocorrect: false,
+    //                     onChanged: signupStore.setEmail,
+    //                   );
+    //                 }),
+    //                 const SizedBox(height: 16),
+    //                 FieldTitle(
+    //                   title: 'Celular',
+    //                   subtitle: 'Proteja sua conta.',
+    //                 ),
+    //                 Observer(builder: (_) {
+    //                   return TextField(
+    //                     enabled: !signupStore.loading,
+    //                     decoration: InputDecoration(
+    //                       border: OutlineInputBorder(),
+    //                       hintText: '(00) 0000-0000',
+    //                       isDense: true,
+    //                       errorText: signupStore.phoneError,
+    //                     ),
+    //                     keyboardType: TextInputType.phone,
+    //                     inputFormatters: [
+    //                       FilteringTextInputFormatter.digitsOnly,
+    //                       TelefoneInputFormatter(),
+    //                     ],
+    //                     onChanged: signupStore.setPhone,
+    //                   );
+    //                 }),
+    //                 const SizedBox(height: 16),
+    //                 FieldTitle(
+    //                   title: 'Senha',
+    //                   subtitle: 'Use letras, números e caracteres especiais.',
+    //                 ),
+    //                 Observer(builder: (_) {
+    //                   return TextField(
+    //                     enabled: !signupStore.loading,
+    //                     decoration: InputDecoration(
+    //                       border: const OutlineInputBorder(),
+    //                       isDense: true,
+    //                       errorText: signupStore.pass1Error,
+    //                     ),
+    //                     obscureText: true,
+    //                     onChanged: signupStore.setPass1,
+    //                   );
+    //                 }),
+    //                 const SizedBox(height: 16),
+    //                 FieldTitle(
+    //                   title: 'Confirmar senha',
+    //                   subtitle: 'Repita a senha.',
+    //                 ),
+    //                 Observer(
+    //                   builder: (_) {
+    //                     return TextField(
+    //                       enabled: !signupStore.loading,
+    //                       decoration: InputDecoration(
+    //                         border: const OutlineInputBorder(),
+    //                         isDense: true,
+    //                         errorText: signupStore.pass2Error,
+    //                       ),
+    //                       obscureText: true,
+    //                       onChanged: signupStore.setPass2,
+    //                     );
+    //                   },
+    //                 ),
+    //                 Observer(builder: (_) {
+    //                   return Container(
+    //                     height: 40,
+    //                     margin: const EdgeInsets.only(top: 20, bottom: 12),
+    //                     child: RaisedButton(
+    //                       color: Colors.orange,
+    //                       disabledColor: Colors.orange.withAlpha(120),
+    //                       child: signupStore.loading
+    //                           ? CircularProgressIndicator(
+    //                               valueColor:
+    //                                   AlwaysStoppedAnimation(Colors.white),
+    //                             )
+    //                           : Text('Cadastrar'),
+    //                       textColor: Colors.white,
+    //                       elevation: 0,
+    //                       shape: RoundedRectangleBorder(
+    //                         borderRadius: BorderRadius.circular(20),
+    //                       ),
+    //                       onPressed: signupStore.signUpPressed,
+    //                     ),
+    //                   );
+    //                 }),
+    //                 Divider(color: Colors.black),
+    //                 Padding(
+    //                   padding: const EdgeInsets.symmetric(vertical: 8),
+    //                   child: Wrap(
+    //                     alignment: WrapAlignment.center,
+    //                     children: [
+    //                       const Text(
+    //                         'Já tem conta?',
+    //                         style: TextStyle(fontSize: 16),
+    //                       ),
+    //                       GestureDetector(
+    //                         onTap: () {
+    //                           Navigator.of(context).pop();
+    //                         },
+    //                         child: Text(
+    //                           'Entrar',
+    //                           style: TextStyle(
+    //                             decoration: TextDecoration.underline,
+    //                             color: Colors.purple,
+    //                             fontSize: 16,
+    //                           ),
+    //                         ),
+    //                       ),
+    //                     ],
+    //                   ),
+    //                 )
+    //               ],
+    //             ),
+    //           ),
+    //         ),
+    //       ),
+    //     ),
+    //   ),
+    // );
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cadastro'),
@@ -24,8 +203,7 @@ class SignUpScreen extends StatelessWidget {
             child: Card(
               margin: const EdgeInsets.symmetric(horizontal: 32),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
+                  borderRadius: BorderRadius.circular(16)),
               elevation: 8,
               child: Padding(
                 padding: const EdgeInsets.all(16),
@@ -35,29 +213,28 @@ class SignUpScreen extends StatelessWidget {
                   children: [
                     Observer(builder: (_) {
                       return Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8.0),
-                        child: ErrorBox(
-                          message: signupStore.error,
-                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 8),
+                        child: ErrorBox(message: signupStore.error),
                       );
                     }),
                     FieldTitle(
                       title: 'Apelido',
-                      subtitle: 'Como aparecer em seus anúncios.',
+                      subtitle: 'Como aparecerá em seus anúncios.',
                     ),
                     Observer(builder: (_) {
                       return TextField(
                         enabled: !signupStore.loading,
                         decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: 'Nome',
-                          isDense: true,
-                          errorText: signupStore.nameError,
-                        ),
+                            border: OutlineInputBorder(),
+                            hintText: 'Exemplo: João S.',
+                            isDense: true,
+                            errorText: signupStore.nameError),
                         onChanged: signupStore.setName,
                       );
                     }),
-                    const SizedBox(height: 16),
+                    const SizedBox(
+                      height: 16,
+                    ),
                     FieldTitle(
                       title: 'E-mail',
                       subtitle: 'Enviaremos um e-mail de confirmação.',
@@ -66,74 +243,74 @@ class SignUpScreen extends StatelessWidget {
                       return TextField(
                         enabled: !signupStore.loading,
                         decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: 'email@email.com',
-                          isDense: true,
-                          errorText: signupStore.emailError,
-                        ),
+                            border: OutlineInputBorder(),
+                            hintText: 'Exemplo: joao@gmail.com',
+                            isDense: true,
+                            errorText: signupStore.emailError),
                         keyboardType: TextInputType.emailAddress,
                         autocorrect: false,
                         onChanged: signupStore.setEmail,
                       );
                     }),
-                    const SizedBox(height: 16),
+                    const SizedBox(
+                      height: 16,
+                    ),
                     FieldTitle(
                       title: 'Celular',
-                      subtitle: 'Proteja sua conta.',
+                      subtitle: 'Proteja sua conta',
                     ),
                     Observer(builder: (_) {
                       return TextField(
                         enabled: !signupStore.loading,
                         decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: '(00) 0000-0000',
-                          isDense: true,
-                          errorText: signupStore.phoneError,
-                        ),
+                            border: OutlineInputBorder(),
+                            hintText: '(99) 99999-9999',
+                            isDense: true,
+                            errorText: signupStore.phoneError),
                         keyboardType: TextInputType.phone,
                         inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly,
-                          TelefoneInputFormatter(),
+                          WhitelistingTextInputFormatter.digitsOnly,
+                          TelefoneInputFormatter()
                         ],
                         onChanged: signupStore.setPhone,
                       );
                     }),
-                    const SizedBox(height: 16),
+                    const SizedBox(
+                      height: 16,
+                    ),
                     FieldTitle(
                       title: 'Senha',
-                      subtitle: 'Use letras, números e caracteres especiais.',
+                      subtitle: 'Use letras, números e caracteres especiais',
                     ),
                     Observer(builder: (_) {
                       return TextField(
                         enabled: !signupStore.loading,
                         decoration: InputDecoration(
-                          border: const OutlineInputBorder(),
-                          isDense: true,
-                          errorText: signupStore.pass1Error,
-                        ),
+                            border: const OutlineInputBorder(),
+                            isDense: true,
+                            errorText: signupStore.pass1Error),
                         obscureText: true,
                         onChanged: signupStore.setPass1,
                       );
                     }),
-                    const SizedBox(height: 16),
-                    FieldTitle(
-                      title: 'Confirmar senha',
-                      subtitle: 'Repita a senha.',
+                    const SizedBox(
+                      height: 16,
                     ),
-                    Observer(
-                      builder: (_) {
-                        return TextField(
-                          enabled: !signupStore.loading,
-                          decoration: InputDecoration(
+                    FieldTitle(
+                      title: 'Confirmar Senha',
+                      subtitle: 'Repita a senha',
+                    ),
+                    Observer(builder: (_) {
+                      return TextField(
+                        enabled: !signupStore.loading,
+                        decoration: InputDecoration(
                             border: const OutlineInputBorder(),
                             isDense: true,
-                            errorText: signupStore.pass2Error,
-                          ),
-                          obscureText: true,
-                          onChanged: signupStore.setPass2,
-                        );
-                      },
-                    ),
+                            errorText: signupStore.pass2Error),
+                        obscureText: true,
+                        onChanged: signupStore.setPass2,
+                      );
+                    }),
                     Observer(builder: (_) {
                       return Container(
                         height: 40,
@@ -146,30 +323,29 @@ class SignUpScreen extends StatelessWidget {
                                   valueColor:
                                       AlwaysStoppedAnimation(Colors.white),
                                 )
-                              : Text('Cadastrar'),
+                              : Text('CADASTRAR'),
                           textColor: Colors.white,
                           elevation: 0,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
+                              borderRadius: BorderRadius.circular(20)),
                           onPressed: signupStore.signUpPressed,
                         ),
                       );
                     }),
-                    Divider(color: Colors.black),
+                    Divider(
+                      color: Colors.black,
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: Wrap(
                         alignment: WrapAlignment.center,
-                        children: [
+                        children: <Widget>[
                           const Text(
-                            'Já tem conta?',
+                            'Já tem uma conta? ',
                             style: TextStyle(fontSize: 16),
                           ),
                           GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).pop();
-                            },
+                            onTap: Navigator.of(context).pop,
                             child: Text(
                               'Entrar',
                               style: TextStyle(
@@ -178,7 +354,7 @@ class SignUpScreen extends StatelessWidget {
                                 fontSize: 16,
                               ),
                             ),
-                          ),
+                          )
                         ],
                       ),
                     )
