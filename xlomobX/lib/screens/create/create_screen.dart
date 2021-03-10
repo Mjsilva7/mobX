@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:xlomobX/components/custom_drawer/custom_drawer.dart';
 import 'package:xlomobX/screens/create/components/images_field.dart';
+import 'package:xlomobX/store/create_store.dart';
 
 class CreateScreen extends StatelessWidget {
+  final CreateStore createStore = CreateStore();
+
   final labelStyle =
       TextStyle(fontWeight: FontWeight.w800, color: Colors.grey, fontSize: 18);
   final contentPadding = const EdgeInsets.fromLTRB(16, 10, 12, 10);
@@ -25,7 +28,7 @@ class CreateScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ImagesField(),
+            ImagesField(createStore),
             TextFormField(
               decoration: InputDecoration(
                 labelText: 'Título *',
